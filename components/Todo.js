@@ -5,7 +5,6 @@ class Todo {
     }
 
     _setEventListeners() {
-        this._todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
         this._todoDeleteBtn.addEventListener("click", () => {
             this._todoElement.remove();
             });
@@ -38,6 +37,7 @@ class Todo {
       .querySelector(".todo")
       .cloneNode(true);
 
+      this._todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
       this._todoNameEl = this._todoElement.querySelector(".todo__name");
       this._todoDate = this._todoElement.querySelector(".todo__date");
       this._todoNameEl.textContent = this._data.name;
