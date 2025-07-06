@@ -9,16 +9,7 @@ const addTodoForm = addTodoPopup.querySelector(".popup__form");
 const addTodoCloseBtn = addTodoPopup.querySelector(".popup__close");
 const todoTemplate = document.querySelector("#todo-template");
 const todosList = document.querySelector(".todos__list");
-
-const updateCounter = () => {
-  document.querySelectorAll(".todo").forEach() => {
-    if (todo.completed) {
-
-    } else {
-
-    }
-  }
-};
+const todo = document.querySelector(".todo");
 
 const openModal = (modal) => {
   modal.classList.add("popup_visible");
