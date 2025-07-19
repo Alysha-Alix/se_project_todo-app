@@ -12,7 +12,6 @@ const addTodoForm = addTodoPopupEl.querySelector(".popup__form");
 const addTodoCloseBtn = addTodoPopupEl.querySelector(".popup__close");
 const todoTemplate = document.querySelector("#todo-template");
 const todosList = document.querySelector(".todos__list");
-const todo = document.querySelector(".todo");
 
 const todoCounter = new TodoCounter(initialTodos);  
 
@@ -46,10 +45,10 @@ function handleCheck(completed) {
 }
 
 function handleDelete(completed) {
-  todoCounter.updateTotal(-1);
+  todoCounter.updateTotal(false);
   if (completed) {
     todoCounter.updateCompleted(false);
-    todoCounter._updateText();
+    todoCounter.textContent();
   }
 }
 
@@ -68,6 +67,7 @@ addTodoForm.addEventListener("submit", (evt) => {
   const values = { name, date, id };
   const todo = generateTodo(values);
   section.addItem(todo);
+  todoCounter.updateTotal(true);
   newTodoValidator.resetValidation();
   addTodoPopup.close();
 });

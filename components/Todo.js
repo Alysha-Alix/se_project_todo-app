@@ -19,6 +19,7 @@ class Todo {
             this._toggleCompletion();
             this._handleCheck(this._todoCheckboxEl.checked);
         });
+        this._todoElement.remove();
     }
 
     _generateCheckboxEl() {

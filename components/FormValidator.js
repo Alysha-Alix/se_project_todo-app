@@ -16,7 +16,7 @@ class FormValidator {
         _inputElement.classList.add(this._inputErrorClass);
         errorElement.textContent = errorMessage;
         errorElement.classList.add(this._errorClass);
-      };
+      }
 
     _hideInputError(_inputElement) {
         const errorElementId = `#${_inputElement.id}-error`;
@@ -24,7 +24,7 @@ class FormValidator {
         _inputElement.classList.remove(this._inputErrorClass);
         errorElement.classList.remove(this._errorClass);
         errorElement.textContent = "";
-      };
+      }
 
     _checkInputValidity(_inputElement) {
         if (!_inputElement.validity.valid) {
@@ -41,7 +41,7 @@ class FormValidator {
         return inputList.some((inputElement) => {
           return !inputElement.validity.valid;
         });
-      };
+      }
 
     _toggleButtonState() {
         if (this._hasInvalidInput(this._inputList)) {
@@ -69,13 +69,13 @@ class FormValidator {
         evt.preventDefault();
         });
         this._setEventListeners();
-    };
+    }
 
     resetValidation() {
         this._formElement.reset();
         this._toggleButtonState();
     }
-};
+}
 
 
 export default FormValidator;
