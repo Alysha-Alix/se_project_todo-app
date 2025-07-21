@@ -48,7 +48,6 @@ function handleDelete(completed) {
   todoCounter.updateTotal(false);
   if (completed) {
     todoCounter.updateCompleted(false);
-    todoCounter.textContent();
   }
 }
 

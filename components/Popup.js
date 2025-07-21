@@ -2,7 +2,7 @@ class Popup{
     constructor({ popupSelector }) {
         this._popupElement = document.querySelector(popupSelector);
         this._popupCloseBtn = this._popupElement.querySelector(".popup__close");
-        this._handleEscapeClose = this._handleEscapeClose();
+        this._handleEscapeClose = this._handleEscapeClose.bind(this);
     }
 
 
@@ -24,9 +24,10 @@ _handleEscapeClose(evt) {
 
     setEventListeners() {
         this._popupElement.addEventListener("mousedown", (evt) => {
-            if (this._popupElement.classList.contains("popup__close") || this._popupElement.classList.contains("popup")) {
+            if (this._popupElement.classList.contains("popup_visible")) {
                 this.close()
             }
+        this._handleEscapeClose();
         });
     }
 }
