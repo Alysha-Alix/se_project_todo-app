@@ -24,10 +24,13 @@ _handleEscapeClose(evt) {
 
     setEventListeners() {
         this._popupElement.addEventListener("mousedown", (evt) => {
-            if (this._popupElement.classList.contains("popup_visible")) {
+            if (
+                evt.target.classList.contains("popup") ||
+                evt.target.classList.contains("popup__close")
+            ) {
+                
                 this.close()
             }
-        this._handleEscapeClose();
         });
     }
 }

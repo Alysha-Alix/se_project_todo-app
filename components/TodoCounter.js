@@ -1,15 +1,13 @@
 import { initialTodos } from "../utils/constants.js";
 
 class TodoCounter {
-    constructor(items, counter) {
+    constructor(items, selector) {
         this._counter = document.querySelector(".counter__text");
         this._completed = items.filter((todo) => todo.completed).length;
         this._total = items.length;
         this._updateText();
     }
 
-  // Call this when a checkbox is clicked, and when a completed
-  // to-do is deleted.
   updateCompleted = (increment) => {
     if (increment) {
         this._completed += 1;
@@ -19,8 +17,6 @@ class TodoCounter {
     this._updateText();
   };
 
-  // Call this when a to-do is deleted, or when a to-do is   
-  // created via the form. 
   updateTotal = (increment) => {
     if (increment) {
         this._total += 1;
