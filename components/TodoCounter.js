@@ -1,8 +1,6 @@
-import { initialTodos } from "../utils/constants.js";
-
 class TodoCounter {
     constructor(items, selector) {
-        this._counter = document.querySelector(".counter__text");
+        this._counter = document.querySelector(selector);
         this._completed = items.filter((todo) => todo.completed).length;
         this._total = items.length;
         this._updateText();
